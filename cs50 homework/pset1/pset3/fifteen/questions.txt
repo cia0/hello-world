@@ -1,0 +1,4 @@
+0. Besides 4d, the game also allows anywhere from 3d to 9d.
+1. A 2 dimensional array is the data structure used to represent the board. 
+2. greet()
+3. init(), draw(), move(), and won()
