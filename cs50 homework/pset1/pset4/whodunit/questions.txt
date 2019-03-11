@@ -1,0 +1,12 @@
+1.  stdint.h is a header file that allows for specific variable length. Although it is low level, it promotes portability and sleeker design because it so explicitly denotes variables' size.
+2.  Using uint8_t, for example, documents that you will be storing small numbers. It is also aesthetically pleasing if you are using the other typedefs from stdint.h.
+3.  BYTE is 1 byte. DWORD and LONG are 8 bytes. WORD is 4 bytes.
+4.  BM
+5.  bfSize refers to the size of the bitmap headerfile and is 8 bytes. biSize refers to the size of the bitmap info header and is only 4 bytes.
+6.  If biHeight is negative then the bitmap is upside down and its origin is the upper-left corner.
+7.  biBitCount specifies the BMP's colour depth.
+8.  fopen might return NULL if there isn't enough memory available to create the file or if the program doesn't have permission.
+9.  The third argument of fread() is always 1 because the section being read is being read as one chunk.
+10. Line 65 of copy.c assigns padding a value of 3 if bi.Width is 3.
+11. fseek() redirects the where a file is being read. This is useful if you wanted to skip over a part.
+12. SEEK_CUR is the current position of the file pointer. 
