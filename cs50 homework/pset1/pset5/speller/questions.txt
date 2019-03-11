@@ -1,0 +1,35 @@
+0. What is pneumonoultramicroscopicsilicovolcanoconiosis?
+
+That is the longest word in the dictionary and the maximum length of a word accepted by the program.
+
+1. According to its man page, what does getrusage do?
+
+It measures the amount of ressources like time and memory used by a program and its children.
+
+2. Per that same man page, how many members are in a variable of type struct rusage?
+
+There are 16 members in a variable type of struct rusage.
+
+3. Why do you think we pass before and after by reference (instead of by value) to calculate, even though we’re not changing their contents?
+
+The getrusage asks for a pointer (struct rusage *usage), and it is considerably more efficient to pass in an address rather the
+value of a large struct.
+    
+4. Explain as precisely as possible, in a paragraph or more, how main goes about reading words from a file. In other words, convince us that you indeed understand how that function’s for loop works.
+
+First main must open the file and check that it can be opened. It then initializes the file pointer "fp". The loop will iterate
+through the text one character at a time using fgetc(fp) and continues until the EOF. In each iteration main checks that the
+character is alphabetical or an apostrophe so as to be considered part of a word and is appended to the current work. 
+Words longer than LENGTH are subsequently ignored as are numbers and punctuation safe for apostrophes. Once main finds a
+non-alphabetical(including apostrophe) and non-numerical character, the current word is terminated with '\0'
+and sent through check().
+
+5. Why do you think we used fgetc to read each word’s characters one at a time rather than use fscanf with a format string like "%s" to read whole words at a time? Put another way, what problems might arise by relying on fscanf alone?
+
+The fscanf function relies on whitespace and non-whitespace characters and would be unable to distinguish between characters and punctuation
+in a string. This would eventually culminate into having words that included punctuation. In order to fix that we would have to go
+back through each word and remove any unwanted punctuation. 
+
+6. Why do you think we declared the parameters for check and load as const (which means "constant")?
+
+Variables being declared as constant prevents changes to them while we point at them for comparrison purposes. 
